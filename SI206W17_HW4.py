@@ -49,6 +49,13 @@ except:
 ## Write your code to complete this task here.
 ## HINT: Remember that you'll need to open the file you created in Part 1, read the contets into one big string, and make a BeautifulSoup object out of that string!
 ## NOTE that the provided link does not include saving the online data in a file as part of the process. But it still provides very useful hints/tricks about how to look for and identify the headlines on the NY Times page.
+headlines = []
+soup = BeautifulSoup(text_data_from_site)
+for headline in soup.find_all(class_="story-heading"):
+	if headline.a:
+		headlines.append(headline.a.text.replace("\n", " ").strip())
+
+nytimes_headlines=headlines[0:10]
 
 
 
