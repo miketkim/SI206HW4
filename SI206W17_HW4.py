@@ -91,10 +91,18 @@ umsi_titles = {}
 ## Find the container that holds the title that belongs to that person (HINT: a class name)
 ## Grab the text of each of those elements and put them in the dictionary umsi_titles properly
 
+name=[]
+title=[]
 
+for x in soup.find_all("div", {"property":"dc:title"}):
+	name.append(x.text)
+print (name)
 
+for x in soup.find_all("div", {"class": "field-name-field-person-titles"}):
+	title.append(x.text)
+print (title)
 
-
+print (len(name))
 
 
 
