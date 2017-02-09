@@ -102,8 +102,10 @@ for x in soup.find_all("div", {"class": "field-name-field-person-titles"}):
 	title.append(x.text)
 print (title)
 
-print ("Hello World")
 
+
+for x in range(len(name)):
+	umsi_titles[name[x]]=title[x]
 
 
 
